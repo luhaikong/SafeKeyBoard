@@ -8,12 +8,12 @@
    
 2、在xml布局文件底部新增“容器控件”：
 
-   ><LinearLayout
+   '''<LinearLayout
         android:id="@+id/keyboardViewPlace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical" />
+        android:orientation="vertical" />'''
         
 3、绑定需要使用安全软键盘的控件：
 
