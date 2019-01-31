@@ -8,7 +8,7 @@
    
 2、在xml布局文件底部新增“容器控件”：
 
-   <LinearLayout
+   ><LinearLayout
         android:id="@+id/keyboardViewPlace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,4 +28,5 @@
   safeKeyboard.setDelDrawable(this.getResources().getDrawable(R.drawable.icon_del));
   safeKeyboard.setLowDrawable(this.getResources().getDrawable(R.drawable.icon_capital_default));
   safeKeyboard.setUpDrawable(this.getResources().getDrawable(R.drawable.icon_capital_selected));
+  
   // 自定义软键盘使用结束
