@@ -2,6 +2,7 @@
 安卓自定义软键盘，支持安卓4.4及以上
 
 使用方法：
+
 1、在需要使用安全软键盘的activity中声明：
 
    private SafeKeyboard safeKeyboard;
