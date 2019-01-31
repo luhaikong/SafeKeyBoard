@@ -13,9 +13,11 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical" />
         
-2、绑定需要使用安全软键盘的控件：
+3、绑定需要使用安全软键盘的控件：
   mPasswordView = (EditText) findViewById(R.id.password);
+  
   // 自定义软键盘使用开始
+  
   LinearLayout keyboardContainer = (LinearLayout) findViewById(R.id.keyboardViewPlace);
   View view = LayoutInflater.from(this).inflate(R.layout.layout_keyboard_containor, null);
   safeKeyboard = new SafeKeyboard(getApplicationContext(), keyboardContainer, mPasswordView,
