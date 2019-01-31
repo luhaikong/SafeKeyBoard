@@ -9,6 +9,7 @@
 2、在xml布局文件底部新增“容器控件”[keyboardViewPlace]：
 
 ![cmd-markdown-logo](https://github.com/luhaikong/SafeKeyBoard/blob/master/picture/xml%E6%A0%B7%E5%BC%8F.png)
+<p><img src="https://github.com/luhaikong/SafeKeyBoard/blob/master/picture/xml%E6%A0%B7%E5%BC%8F.png" alt="cmd-markdown-logo" title="" /></p>
         
 3、绑定需要使用安全软键盘的控件：
 
