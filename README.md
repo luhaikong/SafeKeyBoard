@@ -3,9 +3,11 @@
 
 使用方法：
 1、在需要使用安全软键盘的activity中声明：
+
    private SafeKeyboard safeKeyboard;
    
 2、在xml布局文件底部新增“容器控件”：
+
    <LinearLayout
         android:id="@+id/keyboardViewPlace"
         android:layout_width="match_parent"
@@ -14,6 +16,7 @@
         android:orientation="vertical" />
         
 3、绑定需要使用安全软键盘的控件：
+
   mPasswordView = (EditText) findViewById(R.id.password);
   
   // 自定义软键盘使用开始
