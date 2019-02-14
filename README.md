@@ -16,7 +16,7 @@
   mPasswordView = (EditText) findViewById(R.id.password);
   
   // 自定义软键盘使用开始
-  
+  '''
   LinearLayout keyboardContainer = (LinearLayout) findViewById(R.id.keyboardViewPlace);
   View view = LayoutInflater.from(this).inflate(R.layout.layout_keyboard_containor, null);
   safeKeyboard = new SafeKeyboard(getApplicationContext(), keyboardContainer, mPasswordView,
@@ -24,5 +24,5 @@
   safeKeyboard.setDelDrawable(this.getResources().getDrawable(R.drawable.icon_del));
   safeKeyboard.setLowDrawable(this.getResources().getDrawable(R.drawable.icon_capital_default));
   safeKeyboard.setUpDrawable(this.getResources().getDrawable(R.drawable.icon_capital_selected));
-  
+  '''
   // 自定义软键盘使用结束
