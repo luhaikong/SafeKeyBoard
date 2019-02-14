@@ -20,7 +20,7 @@
   LinearLayout keyboardContainer = (LinearLayout) findViewById(R.id.keyboardViewPlace);  
   View view = LayoutInflater.from(this).inflate(R.layout.layout_keyboard_containor, null);  
   safeKeyboard = new SafeKeyboard(getApplicationContext(), keyboardContainer, mPasswordView,  
-          R.layout.layout_keyboard_containor, view.findViewById(R.id.safeKeyboardLetter).getId());  
+            R.layout.layout_keyboard_containor, view.findViewById(R.id.safeKeyboardLetter).getId());  
   safeKeyboard.setDelDrawable(this.getResources().getDrawable(R.drawable.icon_del));  
   safeKeyboard.setLowDrawable(this.getResources().getDrawable(R.drawable.icon_capital_default));  
   safeKeyboard.setUpDrawable(this.getResources().getDrawable(R.drawable.icon_capital_selected));  
