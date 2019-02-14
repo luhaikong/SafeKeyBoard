@@ -7,7 +7,7 @@
 
    private SafeKeyboard safeKeyboard;
    
-2、在xml布局文件底部新增“容器控件”[keyboardViewPlace]：
+2、在xml布局文件底部新增“控件容器”[keyboardViewPlace]：
 
 ![cmd-markdown-logo](https://github.com/luhaikong/SafeKeyBoard/blob/master/picture/xml%E6%A0%B7%E5%BC%8F.png)
         
