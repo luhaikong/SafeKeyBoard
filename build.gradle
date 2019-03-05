@@ -32,7 +32,7 @@ ext {
     userOrg = 'luhaikong2018'
     groupId = 'com.lhk'
     uploadName = 'safekeyboard'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'Request code can be generated automatically'
     website = 'https://github.com/luhaikong/SafeKeyboard'
     licences = ['Apache-2.0']
