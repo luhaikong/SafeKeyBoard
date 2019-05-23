@@ -2,6 +2,7 @@ package com.mobilecloud.keyboard;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.annotation.TargetApi;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -29,7 +30,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.library.safekeyboard.SafeKeyboard;
 
@@ -67,6 +70,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mLoginFormView;
 
     private SafeKeyboard safeKeyboard;
+    private LinearLayout email_login_form;
+    private float initialY = 0f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +93,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
+        email_login_form = (LinearLayout) findViewById(R.id.email_login_form);
+
         // 自定义软键盘使用开始
         LinearLayout keyboardContainer = (LinearLayout) findViewById(R.id.keyboardViewPlace);
         View view = LayoutInflater.from(this).inflate(R.layout.layout_keyboard_containor, null);
@@ -96,6 +103,27 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         safeKeyboard.setDelDrawable(this.getResources().getDrawable(R.drawable.icon_del));
         safeKeyboard.setLowDrawable(this.getResources().getDrawable(R.drawable.icon_capital_default));
         safeKeyboard.setUpDrawable(this.getResources().getDrawable(R.drawable.icon_capital_selected));
+
+        initialY = email_login_form.getTranslationY();
+        safeKeyboard.setOnShowAndHideListener(new SafeKeyboard.OnShowAndHideListener() {
+            @Override
+            public void onShow(int height) {
+                ObjectAnimator translationY = ObjectAnimator.ofFloat(email_login_form, "translationY",initialY, initialY-height);
+                //动画时间
+                translationY.setDuration(50);//时间
+                //执行动画
+                translationY.start();//开始执行
+            }
+
+            @Override
+            public void onHide(int height) {
+                ObjectAnimator translationY = ObjectAnimator.ofFloat(email_login_form, "translationY",initialY-height, initialY);
+                //动画时间
+                translationY.setDuration(50);//时间
+                //执行动画
+                translationY.start();//开始执行
+            }
+        });
         // 自定义软键盘使用结束
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);

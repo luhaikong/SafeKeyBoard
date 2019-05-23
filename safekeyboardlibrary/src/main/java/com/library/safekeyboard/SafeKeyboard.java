@@ -35,6 +35,7 @@ public class SafeKeyboard {
 
     private Context mContext;               //上下文
 
+    private int mHeight = 0;
     private LinearLayout layout;
     private View keyContainer;              //自定义键盘的容器View
     private SafeKeyboardView keyboardView;  //键盘的View
@@ -117,6 +118,10 @@ public class SafeKeyboard {
             public void onAnimationEnd(Animation animation) {
                 isShowStart = false;
                 keyContainer.clearAnimation();
+                mHeight = keyboardView.getMeasuredHeight();
+                if (onShowAndHideListener!=null){
+                    onShowAndHideListener.onShow(mHeight);
+                }
             }
 
             @Override
@@ -141,6 +146,9 @@ public class SafeKeyboard {
                     keyContainer.setVisibility(View.GONE);
                 }
                 keyContainer.clearAnimation();
+                if (onShowAndHideListener!=null){
+                    onShowAndHideListener.onHide(mHeight);
+                }
             }
 
             @Override
@@ -483,5 +491,26 @@ public class SafeKeyboard {
     public void setUpDrawable(Drawable upDrawable) {
         this.upDrawable = upDrawable;
         keyboardView.setUpDrawable(upDrawable);
+    }
+
+    public void setOnShowAndHideListener(OnShowAndHideListener showAndHideListener) {
+        this.onShowAndHideListener = showAndHideListener;
+    }
+
+    private OnShowAndHideListener onShowAndHideListener;
+
+    /**
+     * 键盘弹出和隐藏后的操作
+     */
+    public interface OnShowAndHideListener {
+        /**
+         * @param height 键盘的高度
+         */
+        void onShow(int height);
+
+        /**
+         * @param height  键盘的高度
+         */
+        void onHide(int height);
     }
 }
