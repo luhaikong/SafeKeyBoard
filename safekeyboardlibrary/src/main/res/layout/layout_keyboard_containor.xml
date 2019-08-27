@@ -65,6 +65,7 @@
         android:layout_marginBottom="10sp"
         android:layout_marginTop="2sp">
 
+        <!--设置keyPreviewHeight的高度可设置点击预览视图的显示高度-->
         <com.library.safekeyboard.SafeKeyboardView
             android:id="@+id/safeKeyboardLetter"
             android:layout_width="match_parent"
@@ -74,7 +75,7 @@
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:keyBackground="@drawable/keyboard_press_bg"
-            android:keyPreviewHeight="60dp"
+            android:keyPreviewHeight="0dp"
             android:keyPreviewLayout="@layout/keyboard_preview_layout"
             android:keyPreviewOffset="0dp"
             android:keyTextColor="@color/white" />
