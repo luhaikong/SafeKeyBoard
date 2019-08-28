@@ -26,3 +26,6 @@
   safeKeyboard.setUpDrawable(this.getResources().getDrawable(R.drawable.icon_capital_selected));  
 
   // 自定义软键盘使用结束
+
+4、备注：
+    如果要使用点击后无预览界面的版本请使用1.0.3版本【compile 'com.lhk:safekeyboard:1.0.3'】
